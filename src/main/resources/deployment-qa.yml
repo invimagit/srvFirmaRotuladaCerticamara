@@ -1,0 +1,26 @@
+spec:
+  replicas: 2
+  template:
+    spec:
+      volumes:
+         - name: plantilla
+           persistentVolumeClaim:
+              claimName: plantillaspvc
+      containers:
+         - volumeMounts:
+             - name: plantilla
+               mountPath: /opt/transversal/plantilla
+           resources:
+              requests:
+                cpu: "100m"
+                memory: 256Mi
+              limits:
+                cpu: "300m"
+                memory: 512Mi
+           env:
+             - name: SPRING_APPLICATION_JSON
+               value: '{"server":{"undertow":{"io-threads":1, "worker-threads":2 }}}'
+             - name: JAVA_OPTIONS
+               value: '-Xms256m -Xmx512m'
+             - name: TZ
+               value: 'UTC+5'

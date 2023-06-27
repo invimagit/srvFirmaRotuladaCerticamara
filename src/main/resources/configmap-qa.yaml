@@ -1,0 +1,8 @@
+data:
+  co.com.invima.procedureonline.echovalue: teestvalue1
+  SQL_URL: 'jdbc:sqlserver://172.16.10.202\\SQL_2017;database=maestra'
+  SQL_USERNAME: usr_tramites
+  SQL_PASSWORD: usr_tramites*
+  SQL_SCHEMA: dbo
+metadata:
+  name: srvfirmarotulada
